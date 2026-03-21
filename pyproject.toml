@@ -20,7 +20,7 @@ ruff = "^0.14.9"
 pyspark = {extras = ["sql,connect"], version = "4.1.1"}
 lightstreamer-client-lib = ">=1.0.3"
 mypy = "^1.19.0"
-pyarrow = "^22.0.0"
+pyarrow = "^23.0.1"
 testcontainers = ">=3.7.0"
 
 [tool.poetry]
