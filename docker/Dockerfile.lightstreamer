@@ -1,0 +1,4 @@
+# Use the official Lightstreamer Docker image with demo adapters
+FROM lightstreamer:7
+
+EXPOSE 8080

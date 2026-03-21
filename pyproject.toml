@@ -1,0 +1,36 @@
+[project]
+name = "lightstreamer-data-source"
+version = "0.1.0"
+description = "Python Data Source for Lightstreamer Streaming Data"
+authors = [
+    {name = "Matt Slack"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+
+[tool.poetry.group.test.dependencies]
+pytest = "^9.0.2"
+pytest-cov = "^7.0.0"
+pytest-spark = "^0.8.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.14.9"
+pyspark = {extras = ["sql,connect"], version = "4.1.1"}
+lightstreamer-client-lib = ">=1.0.3"
+mypy = "^1.19.0"
+pyarrow = "^22.0.0"
+testcontainers = ">=3.7.0"
+
+[tool.poetry]
+packages = [
+    {include = "lightstreamer_pyspark", from = "src"},
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

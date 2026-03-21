@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- Demo adapter configuration for testing -->
+<adapters_conf id="DEMO">
+
+    <!-- Metadata Adapter -->
+    <metadata_adapter_initialised_first>Y</metadata_adapter_initialised_first>
+
+    <metadata_provider>
+        <adapter_class>com.lightstreamer.adapters.metadata.LiteralBasedProvider</adapter_class>
+        <param name="max_bandwidth">40</param>
+        <param name="max_frequency">3</param>
+        <param name="buffer_size">30</param>
+        <param name="distinct_snapshot_length">10</param>
+        <param name="prefilter_frequency">5</param>
+        <param name="allowed_users">*</param>
+        <param name="item_family_1">item.*</param>
+        <param name="modes_for_item_family_1">MERGE DISTINCT COMMAND</param>
+        <param name="data_adapter_for_item_family_1">STOCKLIST</param>
+    </metadata_provider>
+
+    <!-- Data Adapter for stock list demo -->
+    <data_provider name="STOCKLIST">
+        <adapter_class>com.lightstreamer.examples.stocklist.adapters.StockListDemoAdapter</adapter_class>
+        <param name="feed_simulator_class">com.lightstreamer.examples.stocklist.feed_simulator.ExternalFeedSimulator</param>
+        <param name="start">yes</param>
+    </data_provider>
+
+</adapters_conf>
+
